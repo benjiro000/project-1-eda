@@ -5,6 +5,9 @@ data/clean/*
 !data/clean/.gitkeep
 !data/README.md
 
+# Local environment variables / secrets
+.env
+
 # Databases are build artefacts: they are rebuilt by notebook 02.
 *.db
 *.sqlite
@@ -28,3 +31,4 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+

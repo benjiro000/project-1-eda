@@ -1,2 +1,40 @@
 This is the file for communication, so that collaborators can notify about the progress and updates.
 
+###
+Andrey 25.09
+
+-Connecting to FAOSTAT with API:
+https://www.fao.org/faostat/en/#home
+#API Developer Portal
+#Register, confirm email, try to log-in
+#In the notebook code cell: 
+%pip install faostat
+%pip install python-dotenv
+
+#Create a file named .env in the root of the repo
+#Put your credentials in .env:
+FAOSTAT_EMAIL=your@email.com
+FAOSTAT_PASSWORD=your_password
+#Then add to .gitignore the name of the file with credentials:.env
+
+#Restart kernel
+
+#Add code:
+from dotenv import load_dotenv
+import os
+import faostat
+load_dotenv()
+email = os.getenv("FAOSTAT_EMAIL")
+password = os.getenv("FAOSTAT_PASSWORD")
+faostat.set_requests_args(
+    username=email,
+    password=password,
+    timeout=240)
+faostat.list_datasets()
+#If you get an output (a list of available datasets in a dataframe) and not an error - you are connected
+#Once connected, you can download datasets, 
+#but if you re-run the connection code - you will need to restart the kernel in order to re-connect
+
+
+
+###
