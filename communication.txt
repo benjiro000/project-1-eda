@@ -3,9 +3,11 @@ This is the file for communication, so that collaborators can notify about the p
 ###
 Andrey 25.09
 
--Connecting to FAOSTAT with API:
+-Connecting to FAOSTAT with API, more info here:
 https://www.fao.org/faostat/en/#home
-#API Developer Portal
+https://pypi.org/project/faostat/
+
+#Go to API Developer Portal on https://www.fao.org/faostat/en/#home
 #Register, confirm email, try to log-in
 #In the notebook code cell: 
 %pip install faostat
@@ -34,7 +36,5 @@ faostat.list_datasets()
 #If you get an output (a list of available datasets in a dataframe) and not an error - you are connected
 #Once connected, you can download datasets, 
 #but if you re-run the connection code - you will need to restart the kernel in order to re-connect
-
-
 
 ###
